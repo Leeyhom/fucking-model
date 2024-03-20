@@ -135,7 +135,7 @@ if __name__ == "__main__":
     for epoch in range(5):
         optimizer.zero_grad()
         output = model.forword(user_id, hist, item_id, cate_id)
-        # 定义交叉熵损失函数
+        # 定义二分类损失函数
         loss = torch.nn.BCELoss()(output, torch.tensor([1.0]))
         loss.backward()
         optimizer.step()
